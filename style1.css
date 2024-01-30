@@ -1,0 +1,181 @@
+
+.animation{
+     display: flex;
+     border: 1px solid blue;
+     flex-wrap: wrap;
+     align-content: flex-start;
+     justify-content: center;
+     margin-top: 100px;
+
+}
+
+.color1{
+    background: blue;
+    width: 200px;
+    height: 330px;
+    flex-grow: 1;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.color2{
+    background: palevioletred;
+   width: 200px;
+   height: 330px;
+   flex-grow: 1;
+   color: white;
+   font-size: 2em;
+   text-align: center;
+   font-weight: bold;
+}
+
+.anim1{
+    flex-basis: 25%;
+    padding-left: 50px;
+    background-color: bisque;
+    margin-right: 10px;
+}
+
+
+.anim2{
+    flex-basis: 25%;
+    margin-left: 10px;
+}
+
+.tilte-galerie{
+    justify-content: center;
+    text-align: center;
+    margin-top: 100px;
+    border: 2px solid green;
+    background:  linear-gradient(#6664e6, #fafafa);;
+    border-radius: 30px;
+    font-weight: 700px;
+    font-size: 2rem;
+    color: aliceblue;
+    margin-bottom: 70px;
+
+    
+}
+
+/* Animation1 */
+.cercle{
+    width: 100px;
+    height: 100px;
+    background: lightblue;
+    border-radius: 50%;
+    animation-name: bounce;
+    animation-duration: 0.35s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+
+     /* Equivaut exactement à : */
+    animation: bounce 0.35s ease-in infinite alternate;
+    margin-bottom: 100px;
+}
+
+@keyframes bounce {
+
+    from {
+        transform: translateY(0);
+        box-shadow: 0 150px 50px rgba(0, 0, 0, 0.05),
+        inset 0 -15px 15px -5px rgba(0, 0, 0, 0.2);
+        }
+
+   to {
+        transform: translateY(100px);
+        box-shadow: 0px 15px 10px rgba(0, 0, 0, 0.1),
+        inset 0 -15px 15px -5px rgba(0, 0, 0, 0.3);
+        }
+}
+    
+.container {
+    position: relative;
+    height: 100%;
+    background: black;
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+}
+
+/* Chaque carré a 94% de la taille de son parent carré */
+/* Il est décalé de 3% par rapport au carré précédent */
+.carre {
+    height: 94%;
+    width: 94%;
+    top: 3%;
+    left: 3%;
+    background: white;
+    
+    position: absolute;
+}
+
+.noir {
+background: black;
+animation: rotate 20s infinite linear;
+}
+
+/* Essayez de passer la souris progressivement 
+pour mettre en pause une partie des animations */
+
+.noir:hover {
+animation: pause;
+}
+
+@keyframes rotate {
+0% {
+transform: rotate(0deg);
+}
+100% {
+transform: rotate(360deg);
+}
+}
+
+
+@media only screen and (max-width : 800px) {
+
+    .animation{
+        display: flex;
+        flex-direction: column;
+        padding: 0px 10px;
+    }
+
+    .color1{
+        flex-grow: 1;
+        width: 100%;
+    }
+
+    .anim1{
+        padding-left: 150px;
+    }
+
+    .anim2{
+        padding-left: 30px;
+    }
+
+    .color2{
+        flex-grow: 1;
+        width: 100%;
+    }
+
+    .tilte-galerie{
+        justify-content: center;
+        text-align: center;
+        margin-top: 50px;
+        border: 2px solid green;
+        background:  linear-gradient(#6664e6, #fafafa);;
+        border-radius: 30px;
+        font-weight: 300px;
+        font-size: 1rem;
+        color: aliceblue;
+        margin-bottom: 40px;
+    
+        
+    }
+    
+
+
+}
+    
